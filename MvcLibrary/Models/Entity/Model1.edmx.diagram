@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ccc0d4567494fe7a495b36fce8c265d" Name="Diagram1" ZoomLevel="106">
+        <EntityTypeShape EntityType="DBLibraryModel.TBLAUTHOR" Width="1.5" PointX="7.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLBOOK" Width="1.5" PointX="9.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLCASE" Width="1.5" PointX="11.125" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLCATEGORY" Width="1.5" PointX="11.125" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLEMPLOYEE" Width="1.5" PointX="11.125" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLMEMBERS" Width="1.5" PointX="7.125" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLPENALTIES" Width="1.5" PointX="7.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLPROCESS" Width="1.5" PointX="9.25" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="DBLibraryModel.FK_TBLBOOK_TBLAUTHOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_TBLBOOK_TBLCATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_TBLPROCESS_TBLBOOK" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_TBLPROCESS_TBLEMPLOYEE" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_TBLPENALTIES_TBLMEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_TBLPROCESS_TBLMEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_TBLPENALTIES_TBLPROCESS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLABOUT" Width="1.5" PointX="9.125" PointY="0.875" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLContact" Width="1.5" PointX="10.75" PointY="0.875" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLUNIVERSITIES" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLMESSAGES" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBLibraryModel.TBLAnnouncements" Width="1.5" PointX="0.75" PointY="3.75" />
+      </Diagram>
+      <Diagram DiagramId="7c2c70e05576424785f26f35efbe2706" Name="Diagram2" >
+        <EntityTypeShape EntityType="DBLibraryModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

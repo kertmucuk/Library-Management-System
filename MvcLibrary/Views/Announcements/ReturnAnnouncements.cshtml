@@ -1,0 +1,29 @@
+﻿@model MvcLibrary.Models.Entity.TBLAnnouncements
+@{
+    ViewBag.Title = "ReturnAnnouncements";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateAnnouncements", "Announcements", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+        <div style="margin-bottom:15px">
+            @Html.HiddenFor(b => b.ID)
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(a=>a.Category)
+            @Html.TextBoxFor(a=>a.Category, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(a=>a.Content)
+            @Html.TextAreaFor(a=>a.Content, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(a=>a.Date)
+            <input type="text" class="form-control" name="Date" value="@DateTime.Now.ToShortDateString()" />
+        </div>
+        <div>
+            <button class="btn btn-warning">Update</button>
+        </div>
+}
+

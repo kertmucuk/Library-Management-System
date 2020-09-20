@@ -1,0 +1,38 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<TBLPROCESS>
+@{
+    ViewBag.Title = "BookHistory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>@ViewBag.name</h2>
+<br />
+<table class="table table-striped table-bordered">
+    <tr style="background-color:rgb(252,178,22)">
+        <th>BookID</th>
+        <th>BookName</th>
+        <th>AuthorName</th>
+        <th>Lend Date</th>
+        <th>Return Date</th>
+        <th>BorrowBack</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TBLBOOK.ID</td>
+            <td>@item.TBLBOOK.Name</td>
+            <td>@item.TBLBOOK.TBLAUTHOR.Name&nbsp;@item.TBLBOOK.TBLAUTHOR.LastName</td>
+            <td>@Convert.ToDateTime(item.DATEOFPURCHASE).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(item.RETURNDATE).ToString("dd/MM/yyyy")</td>
+            @if (Convert.ToDateTime(item.BorrowBack).ToString("dd/MM/yyyy") == "01.01.0001")
+            {
+                <td>The book is Still in the Member</td>
+            }
+            else
+            {
+                <td>@Convert.ToDateTime(item.BorrowBack).ToString("dd/MM/yyyy")</td>
+            }
+        </tr>
+    }
+</table>
+<a href="/Member/Index/" class="btn btn-primary">Return Back</a>

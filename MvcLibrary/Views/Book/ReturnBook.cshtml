@@ -1,0 +1,43 @@
+﻿@model MvcLibrary.Models.Entity.TBLBOOK
+@{
+    ViewBag.Title = "ReturnBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateBook", "Book", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <div style="margin-bottom:15px">
+            @Html.HiddenFor(b => b.ID)
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(b => b.Category)
+            @Html.DropDownListFor(b => b.TBLCATEGORY.ID, (List<SelectListItem>)ViewBag.value1, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(b => b.Author)
+            @Html.DropDownListFor(b => b.TBLAUTHOR.ID, (List<SelectListItem>)ViewBag.value2, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(b => b.Name)
+            @Html.TextBoxFor(b => b.Name, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(b => b.PrintDate)
+            @Html.TextBoxFor(b => b.PrintDate, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(b => b.Publisher)
+            @Html.TextBoxFor(b => b.Publisher, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(b => b.Page)
+            @Html.TextBoxFor(b => b.Page, new { @class = "form-control" })
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-warning">Update</button>
+    </div>
+}
+

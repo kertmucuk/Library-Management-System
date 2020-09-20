@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family:'Arial';
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 260px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 16px;
+        }
+
+            .sidebar a {
+                padding: 10px 14px 10px 10px;
+                text-decoration: none;
+                font-size: 20px;
+                color: white;
+                display: block;
+            }
+
+                .sidebar a:hover {
+                    color: #0094ff;
+                }
+
+        .main {
+            margin-left: 260px; /* Same as the width of the sidenav */
+            padding: 0px 10px;
+        }
+
+        @@media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="/Statistics/Index"><i class="glyphicon glyphicon-home"></i>&nbsp; Home</a>
+        <a href="/Category/Index/"><i class="glyphicon glyphicon-list"></i>&nbsp; Categories</a>
+        <a href="/Book/Index/"><i class="glyphicon glyphicon-book"></i>&nbsp; Books</a>
+        <a href="/Author/Index/"><i class="glyphicon glyphicon-pencil"></i>&nbsp; Authors</a>
+        <a href="/Member/Index/"><i class="glyphicon glyphicon-user"></i>&nbsp; Members</a>
+        <a href="/Employee/Index/"><i class="glyphicon glyphicon-tower"></i>&nbsp; Employees</a>
+        <a href="/Lending/Index/"><i class="glyphicon glyphicon-circle-arrow-right"></i>&nbsp; Lending Operations</a>
+        <a href="/Borrow/Index/"><i class="glyphicon glyphicon-circle-arrow-left"></i>&nbsp; Borrowing Operations</a>
+        @*<a href="/Statistics/Index"><i class="glyphicon glyphicon-stats"></i>&nbsp; Statistics</a>*@
+        <a href="/Announcements/Index"><i class="glyphicon glyphicon-earphone"></i>&nbsp; Announcements</a>
+        <a href="/Transactions/Index"><i class="glyphicon glyphicon-dashboard"></i>&nbsp; Transactions</a>
+        <a href="/Statistics/WeatherCard"><i class="glyphicon glyphicon-cloud"></i>&nbsp; Weather Forecast</a>
+        <a href="/Statistics/Gallery"><i class="glyphicon glyphicon-picture"></i>&nbsp; Gallery</a>
+        <a href="/ShowCase/Index"><i class="glyphicon glyphicon-gift"></i>&nbsp; ShowCase</a>
+        <a href="#"><i class="glyphicon glyphicon-wrench"></i>&nbsp; Settings</a>
+        <a href="#"><i class="glyphicon glyphicon-info-sign"></i>&nbsp; Help</a>
+        <a href="#"><i class="glyphicon glyphicon-log-out"></i>&nbsp; Exit</a>
+
+
+    </div>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+﻿@model MvcLibrary.Models.Entity.TBLAnnouncements
+@{
+    ViewBag.Title = "Content";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>@ViewBag.id</h2>
+@using(Html.BeginForm("AnnouncementsContents", "Announcements",FormMethod.Get))
+{
+    @Html.HiddenFor(a=>a.ID)
+    <div></div>
+    <div style="margin-bottom:15px" class="form-group">
+        @Html.LabelFor(a => a.Category)
+        @Html.TextBoxFor(a => a.Category, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-bottom:15px" class="form-group">
+        @Html.LabelFor(a=>a.Content)
+        @Html.TextAreaFor(a=>a.Content, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div>
+        <a href="/Announcements/Index/" class="btn btn-primary">Return Back</a>
+    </div>
+}

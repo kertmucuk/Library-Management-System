@@ -1,0 +1,51 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<TBLBOOK>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using(Html.BeginForm("Index","Book",FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px">
+        <b>Please,Enter the Book to Search... &nbsp;</b> <br />
+        @Html.TextBox("p") 
+        <input type="submit" value="Search"  />
+    </div>
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+<h2>Books</h2>
+<table class="table table-striped table-bordered">
+    <tr style="background-color:rgb(252,178,22)">
+        <th>BookID</th>
+        <th>BookCategory</th>
+        <th>BookAuthor</th>
+        <th>BookName</th>
+        <th>BookPrintDate</th>
+        <th>BookPublisher</th>
+        <th>BookPage</th>
+        <th>BookState</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.TBLCATEGORY.CategoryName</td>
+            <td>@item.TBLAUTHOR.Name&nbsp;@item.TBLAUTHOR.LastName</td>
+            <td>@item.Name</td>
+            <td>@item.PrintDate</td>
+            <td>@item.Publisher</td>
+            <td>@item.Page</td>
+            <td>@item.State</td>
+            <td><a href="/Book/DeleteBook/@item.ID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Book/ReturnBook/@item.ID" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/Book/AddNewBook/" class="btn btn-primary">Add New Book</a>
+

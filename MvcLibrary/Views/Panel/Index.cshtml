@@ -1,0 +1,77 @@
+﻿@model MvcLibrary.Models.Entity.TBLMEMBERS
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+<h2>Library Member Informations</h2>
+@using (Html.BeginForm("Index2", "Panel", FormMethod.Post))
+{
+    
+<table class="table table-hover" style="margin-top:15px">
+    @Html.HiddenFor(m => m.ID)
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Mail)
+            @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Password)
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+            <input type="button" value="Hide" id="showHideButton" class="btn btn-warning" name="showHideButton"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Telephone)
+            @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Photo)
+            @Html.TextBoxFor(m => m.Photo, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.School)
+            @Html.TextBoxFor(m => m.School, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td><button class="btn btn-warning">Update Profile</button></td>
+    </tr>
+</table>
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    $("#showHideButton").click(function () {
+        if ($(this).val() == "Show") {
+            $(this).val("Hide");
+            $("#Password").attr("type", "text");
+        } else {
+            $(this).val("Show");
+            $("#Password").attr("type", "password");
+        }
+    });
+</script>

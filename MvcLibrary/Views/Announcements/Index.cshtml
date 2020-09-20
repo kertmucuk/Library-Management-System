@@ -1,0 +1,31 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<TBLAnnouncements>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Announcements</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>AnnouncementsID</th>
+        <th>AnnouncementsCategory</th>
+        <th>AnnouncementsDate</th>
+        <th>AnnouncementsContent</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Category</td>
+            <td>@Convert.ToDateTime(item.Date).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Announcements/AnnouncementsContents/@item.ID" class="btn btn-default" style="background-color:lightseagreen; color:white">Contents</a></td>
+            <td><a href="/Announcements/DeleteAnnouncements/@item.ID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Announcements/ReturnAnnouncements/@item.ID" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/Announcements/AddNewAnnouncements/" class="btn btn-primary">New Announcements</a>
+

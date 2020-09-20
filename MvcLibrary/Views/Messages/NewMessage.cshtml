@@ -1,0 +1,25 @@
+﻿@model MvcLibrary.Models.Entity.TBLMESSAGES
+@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Reciver</label>
+        @Html.TextBoxFor(m => m.Receiver, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Topic</label>
+        @Html.TextBoxFor(m => m.Topic, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Content</label>
+        @Html.TextAreaFor(m => m.Content, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Send</button>
+    </div>
+</form>
+

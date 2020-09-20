@@ -1,0 +1,27 @@
+﻿@model MvcLibrary.Models.Entity.TBLAUTHOR
+@{
+    ViewBag.Title = "AddNewAuthor";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Author Name</label>
+        @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Name, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Author LastName</label>
+        @Html.TextBoxFor(a => a.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.LastName, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Author Details</label>
+        @Html.TextAreaFor(a => a.Detail, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Add New Author</button>
+    </div>
+</form>
+

@@ -1,0 +1,56 @@
+﻿@model MvcLibrary.Models.Entity.TBLMEMBERS
+@{
+    ViewBag.Title = "ReturnMember";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateMember", "Member", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.HiddenFor(m => m.ID)
+    </div>
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Mail)
+        @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Photo)
+        @Html.TextBoxFor(m => m.Photo, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Telephone)
+        @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.School)
+        @Html.TextBoxFor(m => m.School, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Update</button>
+    </div>
+}

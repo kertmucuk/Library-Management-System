@@ -1,0 +1,27 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<TBLMESSAGES>
+@{
+    ViewBag.Title = "SentMessages";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Messages</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Reciver</th>
+        <th>Topic</th>
+        <th>Message</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Receiver</td>
+            <td>@item.Topic</td>
+            <td>@item.Content</td>
+            <td>@item.Date</td>
+        </tr>
+    }
+</table>
+

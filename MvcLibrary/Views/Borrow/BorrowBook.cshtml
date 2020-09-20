@@ -1,0 +1,47 @@
+﻿@model MvcLibrary.Models.Entity.TBLPROCESS
+@{
+    ViewBag.Title = "BorrowBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("BorrowBack", "Borrow", FormMethod.Post))
+{
+    <div></div>
+    <div style="margin-top:15px">
+        @Html.HiddenFor(p => p.ID)
+        <label>Book Name</label>
+        @Html.HiddenFor(p => p.TBLBOOK.ID)
+        @Html.TextBoxFor(p => p.TBLBOOK.Name, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Member Name</label>
+        @Html.TextBoxFor(p => p.TBLMEMBERS.Name, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Employee Name</label>
+        @Html.TextBoxFor(p => p.TBLEMPLOYEE.Employee, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Book LendDate</label>
+        @Html.TextBoxFor(p => p.DATEOFPURCHASE, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Book ReturnDate</label>
+        @Html.TextBoxFor(p => p.RETURNDATE, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>the Date Member Returned Book </label>
+        <input type="text" class="form-control" name="BorrowBack" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    if (!(ViewBag.value < 0 || ViewBag.value == 0))
+    {
+        <div style="margin-top:15px">
+            <label>Number of Late Arriving Days</label>
+            <input type="text" class="form-control" id="latedays" value="@ViewBag.value" />
+        </div>
+    }
+    <div style="margin-top:15px">
+        <button class="btn btn-group" style="background-color:#a330b5; color:white">Borrow The Book</button>
+    </div>
+}
+

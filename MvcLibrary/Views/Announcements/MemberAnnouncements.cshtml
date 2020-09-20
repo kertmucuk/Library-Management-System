@@ -1,0 +1,26 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<TBLAnnouncements>
+@{
+    ViewBag.Title = "MemberAnnouncements";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Announcements</h2>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Content</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.ID</td>
+    <td>@item.Category</td>
+    <td>@Convert.ToDateTime(item.Date).ToString("dd/MM/yyyy")</td>
+    <td><a href="/Announcements/MemberAnnouncementsContents/@item.ID" class="btn btn-default" style="background-color:lightseagreen; color:white">Contents</a></td>
+</tr>
+    }
+</table>

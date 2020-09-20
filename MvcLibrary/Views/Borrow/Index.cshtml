@@ -1,0 +1,32 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<TBLPROCESS>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Borrowed Books</h2>
+<table class="table table-striped table-bordered">
+    <tr style="background-color:rgb(252,178,22)">
+        <th>ProcessID</th>
+        <th>BookName</th>
+        <th>MemberName</th>
+        <th>EmployeeName</th>
+        <th>LendDate</th>
+        <th>ReturnDate</th>
+        <th>Borrowback</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.TBLBOOK.Name</td>
+            <td>@item.TBLMEMBERS.Name&nbsp;@item.TBLMEMBERS.LastName</td>
+            <td>@item.TBLEMPLOYEE.Employee</td>
+            <td>@Convert.ToDateTime(item.DATEOFPURCHASE).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(item.RETURNDATE).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(item.BorrowBack).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>
+
